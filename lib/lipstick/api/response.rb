@@ -133,7 +133,7 @@ module Lipstick
         if !resp.empty?
           resp.each do |att, val|
             self.class.__send__(:attr_accessor, underscore(att))
-            self.__send__("#{att}=", val)
+            self.__send__("#{underscore(att)}=", val)
           end
         end
       end
